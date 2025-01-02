@@ -1,3 +1,129 @@
 <!DOCTYPE html>
-initial commit
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .cutout {
+            position: absolute;
+            animation: float 4s infinite;
+        }
+
+        .cutout-person {
+            width: 200px;
+            height: 300px;
+            background-image: url('cutout-person.png'); /* Replace with actual path */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .cutout-camera {
+            width: 150px;
+            height: 150px;
+            background-image: url('cutout-camera.png'); /* Replace with actual path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation-delay: 1s;
+        }
+
+        .cutout-laptop {
+            width: 200px;
+            height: 150px;
+            background-image: url('cutout-laptop.png'); /* Replace with actual path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        #menu {
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-item {
+            width: 150px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="cutout cutout-person"></div>
+        <div class="cutout cutout-camera"></div>
+        <div class="cutout cutout-laptop"></div>
+
+        <div id="menu">
+            <div class="menu-item">Photography</div>
+            <div class="menu-item">Social Media</div>
+            <div class="menu-item">Design</div>
+            <div class="menu-item">Videography</div>
+        </div>
+    </div>
+
+    <script>
+        // Positioning elements dynamically
+        document.addEventListener('DOMContentLoaded', () => {
+            const person = document.querySelector('.cutout-person');
+            const camera = document.querySelector('.cutout-camera');
+            const laptop = document.querySelector('.cutout-laptop');
+
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+
+            person.style.left = ${centerX - 100}px;
+            person.style.top = ${centerY - 150}px;
+
+            camera.style.left = ${centerX - 200}px;
+            camera.style.top = ${centerY}px;
+
+            laptop.style.left = ${centerX + 100}px;
+            laptop.style.top = ${centerY}px;
+        });
+    </script>
+</body>
 </html>
