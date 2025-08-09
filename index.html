@@ -1,129 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            background-color: #f0f0f0;
-        }
-
-        #container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .cutout {
-            position: absolute;
-            animation: float 4s infinite;
-        }
-
-        .cutout-person {
-            width: 200px;
-            height: 300px;
-            background-image: url('cutout-person.png'); /* Replace with actual path */
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        .cutout-camera {
-            width: 150px;
-            height: 150px;
-            background-image: url('cutout-camera.png'); /* Replace with actual path */
-            background-size: cover;
-            background-repeat: no-repeat;
-            animation-delay: 1s;
-        }
-
-        .cutout-laptop {
-            width: 200px;
-            height: 150px;
-            background-image: url('cutout-laptop.png'); /* Replace with actual path */
-            background-size: cover;
-            background-repeat: no-repeat;
-            animation-delay: 2s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        #menu {
-            position: absolute;
-            bottom: 10%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .menu-item {
-            width: 150px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .menu-item:hover {
-            transform: scale(1.1);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mat Jafari — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="container">
-        <div class="cutout cutout-person"></div>
-        <div class="cutout cutout-camera"></div>
-        <div class="cutout cutout-laptop"></div>
-
-        <div id="menu">
-            <div class="menu-item">Photography</div>
-            <div class="menu-item">Social Media</div>
-            <div class="menu-item">Design</div>
-            <div class="menu-item">Videography</div>
-        </div>
+<header class="site-header">
+  <nav class="nav">
+    <a href="#" class="logo">Mat</a>
+    <div class="nav-links">
+      <a data-i18n="nav.home" href="#home">Home</a>
+      <a data-i18n="nav.books" href="books.html">Books</a>
+      <a data-i18n="nav.work" href="#work">Work</a>
     </div>
+    <div class="lang-switch">
+      <button data-lang="en">EN</button>
+      <button data-lang="fa">FA</button>
+      <button data-lang="ja">日本語</button>
+    </div>
+  </nav>
+</header>
 
-    <script>
-        // Positioning elements dynamically
-        document.addEventListener('DOMContentLoaded', () => {
-            const person = document.querySelector('.cutout-person');
-            const camera = document.querySelector('.cutout-camera');
-            const laptop = document.querySelector('.cutout-laptop');
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <div class="hero-photo-wrap">
+        <img src="assets/images/hero-cutout.png" alt="Mat Jafari" class="hero-photo">
+        <div class="sticker s1"><img src="assets/icons/camera.svg" alt=""></div>
+        <div class="sticker s2"><img src="assets/icons/laptop.svg" alt=""></div>
+        <div class="sticker s3"><img src="assets/icons/sticker-star.svg" alt=""></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <h1 class="float-3d">Mat Jafari</h1>
+<div class="name-fa" lang="fa" dir="rtl">مهدیه جعفری</div>
+      <p data-i18n="hero.tagline" class="tagline">Designer • Marketer • Filmmaker</p>
+      <a class="btn primary" href="#work" data-i18n="hero.cta">See my work</a>
+    </div>
+  </section>
 
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
+  <!-- BOOKS PREVIEW (Goodreads) -->
+  <section class="books-preview">
+    <div class="section-head">
+      <h2 data-i18n="books.preview.title">Books I’ve read — quick notes</h2>
+      <a href="books.html" class="btn ghost" data-i18n="books.preview.open">Open full list</a>
+    </div>
+    <div class="goodreads-embed">
+      <iframe 
+        src="https://www.goodreads.com/review/grid/53684401?cover_size=medium&hide_link=true&hide_title=true&num_books=15&order=d&shelf=read&sort=date_read" 
+        width="100%" height="620" frameborder="0" loading="lazy" title="Goodreads Read Shelf Preview"></iframe>
+      <p style="text-align:right;margin:.5rem 0 0"><a href="https://www.goodreads.com/user/show/53684401-mat" target="_blank" rel="noopener">Open on Goodreads →</a></p>
+    </div>
+  </section>
 
-            person.style.left = ${centerX - 100}px;
-            person.style.top = ${centerY - 150}px;
+  <!-- SKILLS -->
+  <section class="skills">
+    <h2 data-i18n="skills.title">Language Abilities</h2>
+    <div class="skill" data-level="100">
+      <span data-i18n="skills.fa">Persian — Native</span>
+      <div class="bar"><i></i></div>
+    </div>
+    <div class="skill" data-level="90">
+      <span data-i18n="skills.en">English — Near-native (90%)</span>
+      <div class="bar"><i></i></div>
+    </div>
+    <div class="skill" data-level="80">
+      <span data-i18n="skills.ja">Japanese — JLPT N2 (80%)</span>
+      <div class="bar"><i></i></div>
+    </div>
+    <div class="skill" data-level="10">
+      <span data-i18n="skills.fr">French — A1 (10%)</span>
+      <div class="bar"><i></i></div>
+    </div>
+  </section>
 
-            camera.style.left = ${centerX - 200}px;
-            camera.style.top = ${centerY}px;
+  <!-- BEHANCE & PHOTOGRAPHY -->
+  <section class="behance" id="work">
+    <h2 data-i18n="behance.title">Behance & Photography</h2>
+    <div class="media-strip">
+      <a class="tile" href="https://www.behance.net/matjafari" target="_blank" rel="noopener">
+        <img src="assets/images/behance1.jpg" alt="Behance">
+      </a>
+      <a class="tile" href="https://www.behance.net/matjafari" target="_blank" rel="noopener">
+        <img src="assets/images/behance2.jpg" alt="Behance">
+      </a>
+      <a class="tile" href="https://www.behance.net/matjafari" target="_blank" rel="noopener">
+        <img src="assets/images/photo1.jpg" alt="Photography">
+      </a>
+    </div>
+  </section>
 
-            laptop.style.left = ${centerX + 100}px;
-            laptop.style.top = ${centerY}px;
-        });
-    </script>
+  <!-- VIDEO -->
+  <section class="video">
+    <h2 data-i18n="video.title">Filmmaking — Selected videos</h2>
+    <div class="video-list">
+      <a class="card video" href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID_HERE" target="_blank" rel="noopener">
+        <img src="assets/images/video1.jpg" alt="YouTube Playlist">
+        <span>Open YouTube playlist</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- EDUCATION TIMELINE -->
+  <section class="edu">
+    <h2 data-i18n="edu.title">Education</h2>
+    <div class="timeline">
+      <div class="milestone" data-i18n="edu.m1">High school — Mathematics graduate</div>
+      <div class="milestone" data-i18n="edu.m2">Associate — Electronics</div>
+      <div class="milestone" data-i18n="edu.m3">B.Sc. — Information Engineering (in progress)</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="exp">
+    <h2 data-i18n="exp.title">Experience</h2>
+    <ul class="exp-list">
+      <li data-i18n="exp.l1">Japanese language instructor</li>
+      <li data-i18n="exp.l2">English instructor at a Japanese institute</li>
+      <li data-i18n="exp.l3">Marketing Department Manager at a major Japanese company (current)</li>
+    </ul>
+  </section>
+
+  <!-- INTERESTS -->
+  <section class="interests">
+    <h2 data-i18n="interests.title">Interests</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/images/iaido.jpg" alt="Iaido">
+        <h3 data-i18n="interests.iaido">Iaido / Swordsmanship</h3>
+      </div>
+      <div class="card">
+        <img src="assets/images/photo1.jpg" alt="Chess">
+        <h3 data-i18n="interests.chess">Chess — recent games</h3>
+        <p><iframe src="https://www.chess.com/member/matjafari?embed=1" width="100%" height="400" frameborder="0"></iframe></p>
+      </div>
+      <div class="card">
+        <div class="socials">
+          <a class="icon" href="https://www.instagram.com/matjafari/" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" alt="IG"></a>
+          <a class="icon" href="https://t.me/matjafarii" target="_blank" rel="noopener"><img src="assets/icons/telegram.svg" alt="TG"></a>
+          <a class="icon" href="https://shorts.aparat.com/fa/user/Matjafarii/home" target="_blank" rel="noopener"><img src="assets/icons/aparat.svg" alt="Aparat"></a>
+        </div>
+        <h3 data-i18n="interests.social">Social — follow me</h3>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <small data-i18n="footer">© 2025 Mat Jafari</small>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
