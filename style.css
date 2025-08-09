@@ -1,0 +1,74 @@
+
+:root{
+  --bg:#0e0e10; --fg:#eae8e3; --muted:#a59f95; --brand:#b08d57; --card:#161618; --accent:#c7a97b;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,Helvetica Neue,Arial}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.site-header{position:sticky;top:0;background:rgba(14,14,16,.8);backdrop-filter: blur(8px);border-bottom:1px solid #222;z-index:50}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;gap:1rem;padding:10px 16px}
+.logo{font-weight:800;letter-spacing:.5px}
+.nav-links{display:flex;gap:1rem;margin-left:auto}
+.lang-switch button{margin-left:.25rem;background:#222;border:1px solid #333;color:var(--fg);padding:.3rem .6rem;border-radius:6px;cursor:pointer}
+.lang-switch button:hover{border-color:var(--accent)}
+.hero{max-width:1100px;margin:40px auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;padding:0 16px}
+.hero-photo-wrap{position:relative;perspective:1000px}
+.hero-photo{width:100%;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));transform:rotateY(-8deg);transform-style:preserve-3d}
+.sticker{position:absolute;width:72px;height:72px;display:grid;place-items:center;background:#1d1d21;border:1px solid #2a2a30;border-radius:12px;color:var(--accent);box-shadow:0 10px 20px rgba(0,0,0,.5);transform-style:preserve-3d}
+.sticker img{width:40px;height:40px}
+.s1{left:-20px;top:10%;transform:translateZ(40px) rotateY(12deg)}
+.s2{right:-20px;top:38%;transform:translateZ(60px) rotateY(-10deg)}
+.s3{left:15%;bottom:-20px;transform:translateZ(80px) rotateX(10deg)}
+.float-3d{font-size:clamp(36px,6vw,72px);line-height:1;letter-spacing:.5px;font-weight:900;display:inline-block;transform:translateZ(80px);text-shadow:0 10px 30px rgba(0,0,0,.6)}
+.tagline{color:var(--muted);margin:.5rem 0 1.5rem}
+.btn{display:inline-block;padding:.7rem 1rem;border-radius:10px;border:1px solid #333}
+.btn.primary{background:var(--brand);color:#120} .btn.ghost{background:transparent;color:var(--fg)}
+.section-head{max-width:1100px;margin:40px auto 10px;display:flex;justify-content:space-between;align-items:end;padding:0 16px}
+.books-scroller,.goodreads-embed{max-width:1100px;margin:0 auto;padding:0 16px}
+.card{background:var(--card);border:1px solid #242428;border-radius:14px;overflow:hidden}
+.card img{display:block;width:100%;height:200px;object-fit:cover}
+.card h3{margin:10px 12px} .card p{margin:0 12px 14px;color:var(--muted)}
+.skills{max-width:1100px;margin:60px auto 0;padding:0 16px}
+.skill{margin:16px 0} .skill .bar{height:10px;background:#202024;border:1px solid #2a2a30;border-radius:999px;overflow:hidden}
+.skill .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--accent))}
+.behance, .video, .edu, .exp, .interests{max-width:1100px;margin:60px auto;padding:0 16px}
+.media-strip{display:flex;gap:12px;overflow:auto;padding-bottom:4px}
+.media-strip .tile{min-width:320px}
+.video-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.video .card{display:block;text-align:center} .video .card span{display:block;padding:8px 0;color:var(--muted)}
+.timeline{position:relative;margin-top:16px;padding-left:22px}
+.timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:#333}
+.milestone{position:relative;margin:18px 0;padding-left:12px}
+.milestone::before{content:"";position:absolute;left:-2px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--brand)}
+.exp-list{line-height:1.9}
+.interests .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.socials{display:flex;gap:10px;padding:20px;justify-content:center}
+.socials .icon{width:48px;height:48px;display:grid;place-items:center;background:#1e1e21;border:1px solid #2a2a30;border-radius:12px}
+.site-footer{border-top:1px solid #222;padding:20px;text-align:center;color:var(--muted);margin-top:60px}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .video-list{grid-template-columns:1fr}
+  .interests .grid{grid-template-columns:1fr}
+}
+.reveal{opacity:0;transform:translateY(20px);transition:all .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* --- Subtle Iranian geometric background --- */
+body{
+  background:
+    linear-gradient(rgba(14,14,16,.96), rgba(14,14,16,.96)),
+    url('../assets/images/bg-pattern.svg');
+  background-attachment: fixed;
+  background-size: 400px 400px, 160px 160px;
+}
+
+/* Persian calligraphy line under the English name */
+.name-fa{
+  margin-top: .4rem;
+  font-size: clamp(22px, 3.6vw, 40px);
+  line-height: 1.2;
+  color: var(--accent);
+  direction: rtl;
+  /* Try common Nastaliq / Persian fonts if available on system */
+  font-family: "Noto Nastaliq Arabic", "IranNastaliq", "Vazirmatn", "Noto Naskh Arabic", serif;
+  text-shadow: 0 6px 18px rgba(0,0,0,.45);
+}
